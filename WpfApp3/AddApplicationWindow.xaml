@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfApp3.AddApplicationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить заявку" Height="300" Width="400">
+    <Grid Height="284" VerticalAlignment="Center" HorizontalAlignment="Left" Width="400">
+        <TextBox Name="ClientNameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,10"/>
+        <TextBox Name="PhoneNumberTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,50"/>
+        <TextBox Name="DeviceTypeTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,90"/>
+        <TextBox Name="ProblemDescriptionTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,130"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="60,171,0,0" Click="SaveButton_Click" Height="46"/>
+    </Grid>
+</Window>
