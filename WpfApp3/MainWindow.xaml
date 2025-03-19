@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Сервисный центр «БытТех»" Height="400" Width="600">
     <Grid Height="384" VerticalAlignment="Top">
-        <Button Content="Добавить заявку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="AddApplication_Click"/>
+        <Button Content="Добавить заявку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="AddApplication_Click" Margin="10,10,0,0"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="EditApplication_Click" Margin="140,10,0,0"/>
 
         <!-- Список заявок -->
         <ListView Name="ApplicationsListView" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="533" Margin="10,40,0,0">

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WpfApp3.Data;
+using WpfApp3.Models;
 
 namespace WpfApp3
 {
@@ -8,20 +9,38 @@ namespace WpfApp3
         public MainWindow()
         {
             InitializeComponent();
-            LoadApplications();  // Загружаем заявки при старте
+            LoadApplications();
         }
 
         private void LoadApplications()
         {
-            // Теперь обновление данных происходит автоматически через ObservableCollection
             ApplicationsListView.ItemsSource = ApplicationContext.Applications;
         }
 
         private void AddApplication_Click(object sender, RoutedEventArgs e)
         {
-            // Открываем окно для добавления заявки
             AddApplicationWindow addWindow = new AddApplicationWindow();
-            addWindow.ShowDialog();  // После закрытия окна автоматически обновится список
+            addWindow.ShowDialog();
+        }
+
+        private void EditApplication_Click(object sender, RoutedEventArgs e)
+        {
+            // Получаем выбранную заявку
+            var selectedRequest = ApplicationsListView.SelectedItem as RepairRequest;
+
+            if (selectedRequest != null)
+            {
+                // Открываем окно редактирования
+                EditApplicationWindow editWindow = new EditApplicationWindow(selectedRequest);
+                editWindow.ShowDialog();
+
+                // Обновляем список заявок
+                ApplicationsListView.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Выберите заявку для редактирования.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
