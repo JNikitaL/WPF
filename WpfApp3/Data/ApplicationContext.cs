@@ -1,16 +1,14 @@
-﻿using System.Collections.ObjectModel;  // Добавьте пространство имен для ObservableCollection
+﻿using System.Collections.ObjectModel;
 using WpfApp3.Models;
 
 namespace WpfApp3.Data
 {
     public static class ApplicationContext
     {
-        // Используем ObservableCollection для автоматического обновления UI
         public static ObservableCollection<RepairRequest> Applications { get; set; } = new ObservableCollection<RepairRequest>();
 
         static ApplicationContext()
         {
-            // Добавляем начальные данные в список заявок
             Applications.Add(new RepairRequest
             {
                 ClientName = "Иванов Иван",

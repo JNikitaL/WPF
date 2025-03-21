@@ -24,7 +24,6 @@ namespace WpfApp3
             InitializeComponent();
             _selectedRequest = selectedRequest;
 
-            // Заполняем поля данными выбранной заявки
             ClientNameTextBox.Text = _selectedRequest.ClientName;
             PhoneNumberTextBox.Text = _selectedRequest.PhoneNumber;
             DeviceTypeTextBox.Text = _selectedRequest.DeviceType;
@@ -33,13 +32,11 @@ namespace WpfApp3
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Обновляем данные выбранной заявки
             _selectedRequest.ClientName = ClientNameTextBox.Text;
             _selectedRequest.PhoneNumber = PhoneNumberTextBox.Text;
             _selectedRequest.DeviceType = DeviceTypeTextBox.Text;
             _selectedRequest.ProblemDescription = ProblemDescriptionTextBox.Text;
 
-            // Закрываем окно
             this.Close();
         }
     }

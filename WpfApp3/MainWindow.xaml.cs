@@ -25,16 +25,13 @@ namespace WpfApp3
 
         private void EditApplication_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем выбранную заявку
             var selectedRequest = ApplicationsListView.SelectedItem as RepairRequest;
 
             if (selectedRequest != null)
             {
-                // Открываем окно редактирования
                 EditApplicationWindow editWindow = new EditApplicationWindow(selectedRequest);
                 editWindow.ShowDialog();
 
-                // Обновляем список заявок
                 ApplicationsListView.Items.Refresh();
             }
             else

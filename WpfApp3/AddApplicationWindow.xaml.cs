@@ -6,7 +6,6 @@ namespace WpfApp3
 {
     public partial class AddApplicationWindow : Window
     {
-        // Делаем событие для уведомления MainWindow
         public delegate void ApplicationAddedEventHandler();
         public event ApplicationAddedEventHandler ApplicationAdded;
 
@@ -17,7 +16,6 @@ namespace WpfApp3
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Валидация данных
             //if (string.IsNullOrWhiteSpace(ClientNameTextBox.Text) ||
             //    string.IsNullOrWhiteSpace(PhoneNumberTextBox.Text) ||
             //    string.IsNullOrWhiteSpace(DeviceTypeTextBox.Text) ||
@@ -27,7 +25,6 @@ namespace WpfApp3
             //    return;
             //}
 
-            // Создаем новую заявку
             RepairRequest newRequest = new RepairRequest
             {
                 ClientName = ClientNameTextBox.Text,
@@ -36,13 +33,10 @@ namespace WpfApp3
                 ProblemDescription = ProblemDescriptionTextBox.Text
             };
 
-            // Добавляем заявку в список
             ApplicationContext.Applications.Add(newRequest);
 
-            // Вызываем событие, сообщающее о добавлении новой заявки
             ApplicationAdded?.Invoke();
 
-            // Закрываем окно
             this.Close();
         }
     }
